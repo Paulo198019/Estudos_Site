@@ -1,117 +1,147 @@
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Escritório de Advocacia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- NAV -->
-  <nav class="navbar">
-    <div class="container nav-wrap">
-      <div class="brand">Escritório</div>
-      <ul class="nav-links">
-        <li><a href="#quem-somos">Quem Somos</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#areas">Áreas</a></li>
-        <li><a href="#advogada">Advogada</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </div>
-  </nav>
+:root{
+  /* Escolha um dos dois tons abaixo para o banner */
+  --banner-blue: #0D1B2A; /* opção 1 (mais escura) */
+  /* --banner-blue: #1A2A3A;  opção 2 (mais clara) */
 
-  <!-- HERO SPLIT: imagem à esquerda / texto à direita -->
-  <header class="hero">
-    <div class="container hero-grid">
-      <div class="hero-left">
-        <img src="escritorio.jpg" alt="Escritório" loading="eager" />
-        <div class="overlay"></div>
-      </div>
-      <div class="hero-right">
-        <h1>Defendendo seus direitos com excelência</h1>
-        <p>Atendimento personalizado, ética e estratégia para cada caso.</p>
-        <a class="cta" href="#contato">Agende uma consulta</a>
-      </div>
-    </div>
-  </header>
+  --blue: #0b2b57;
+  --blue-dark: #082142;
+  --green: #25D366;
+  --gray: #f5f6f8;
+  --text: #333;
+}
 
-  <!-- QUEM SOMOS / SOBRE em duas colunas -->
-  <section id="quem-somos" class="section">
-    <div class="container two-col">
-      <div>
-        <h2>Quem Somos</h2>
-        <p>Especialistas em Direito de Família, Trabalho, Previdenciário, Consumidor e Empresarial. Oferecemos soluções jurídicas claras e eficientes.</p>
-      </div>
-      <div id="sobre">
-        <h2>Sobre</h2>
-        <p>Experiência prática e estudo contínuo, conduzindo cada demanda com alto padrão técnico e proximidade com o cliente.</p>
-      </div>
-    </div>
-  </section>
+*{ box-sizing: border-box }
+html,body{ margin:0; padding:0 }
+body{
+  font-family:'Open Sans',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:#fff;
+}
 
-  <!-- ÁREAS DE ATUAÇÃO / CARDS -->
-  <section id="areas" class="section gray">
-    <div class="container">
-      <h2>Áreas de Atuação</h2>
-      <div class="cards">
-        <article class="card">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm-9 9a9 9 0 0 1 18 0z"/></svg>
-          <h3>Família</h3>
-        </article>
-        <article class="card">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16v6H4zm0 10h10v6H4z"/></svg>
-          <h3>Trabalho</h3>
-        </article>
-        <article class="card">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 5h-2v6l5 3 .9-1.79-3.9-2.21z"/></svg>
-          <h3>Previdência</h3>
-        </article>
-        <article class="card">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 3h18v4H3zm0 6h18v12H3z"/></svg>
-          <h3>Consumidor</h3>
-        </article>
-        <article class="card">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 7h16v10H4zm2-4h12v3H6z"/></svg>
-          <h3>Empresarial</h3>
-        </article>
-      </div>
-    </div>
-  </section>
+/* NAV */
+.navbar{
+  position:sticky; top:0; z-index:1000;
+  background:var(--blue-dark); color:#fff;
+}
+.container{ width:min(1100px,92%); margin:0 auto }
+.nav-wrap{ display:flex; align-items:center; justify-content:space-between; padding:.75rem 0 }
+.brand{ font-weight:700; color:#fff }
+.nav-links{ list-style:none; display:flex; gap:1rem; margin:0; padding:0 }
+.nav-links a{ color:#fff; text-decoration:none; font-weight:600 }
+.nav-links a:hover{ opacity:.85 }
 
-  <!-- ADVOGADA RESPONSÁVEL -->
-  <section id="advogada" class="section">
-    <div class="container advogada-wrap">
-      <img src="foto-profissional.jpg" alt="Advogada" class="foto-advogada" loading="lazy" />
-      <div class="advogada-text">
-        <h2>Advogada Responsável</h2>
-        <p>Dra. Débora — Especialista em Direito Civil e Trabalhista.</p>
-        <div class="social">
-          <a href="https://wa.me/5599999999999" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </section>
+/* BANNER AZUL */
+.banner-azul{
+  background: var(--banner-blue);
+  color: #fff;
+}
+.banner-content{
+  padding: 40px 0;
+  text-align: center;
+}
+.banner-azul h1{
+  font-family:'Merriweather',serif;
+  font-size: 2.2rem;
+  margin: 0 0 8px;
+}
+.banner-azul p{
+  font-size: 1.15rem;
+  margin: 0;
+  opacity: .95;
+}
 
-  <!-- CONTATO -->
-  <section id="contato" class="section gray">
-    <div class="container">
-      <h2>Contato</h2>
-      <form class="form">
-        <input type="text" placeholder="Seu nome" required />
-        <input type="email" placeholder="Seu e-mail" required />
-        <textarea placeholder="Sua mensagem" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
-  </section>
+/* HERO SPLIT */
+.hero{ background: var(--blue); color:#fff }
+.hero-grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:2rem;
+  align-items:center; padding:2rem 0;
+}
+.hero-left{ position:relative }
+.hero-left img{
+  width:100%; height:360px; object-fit:cover; border-radius:10px;
+}
+.hero-left .overlay{
+  position:absolute; inset:0; background:rgba(8,33,66,.25); border-radius:10px;
+}
+.hero-right h2{
+  font-family:'Merriweather',serif; font-size:1.8rem; margin:0 0 .75rem;
+}
+.hero-right p{ margin:0 0 1rem }
+.cta{
+  display:inline-block; background:#fff; color:var(--blue-dark);
+  padding:.75rem 1rem; border-radius:6px; text-decoration:none; font-weight:700;
+}
+.cta.inline{ margin-top:.5rem }
 
-  <a class="whatsapp-fab" href="https://wa.me/5599999999999" aria-label="WhatsApp">WhatsApp</a>
+/* SECTIONS */
+.section{ padding:2.5rem 0 }
+.section.gray{ background:var(--gray) }
+.two-col{
+  display:grid; grid-template-columns:1fr 1fr; gap:2rem;
+}
+.two-col h2{
+  font-family:'Merriweather',serif; margin:0 0 .5rem;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+/* CARDS */
+.cards{
+  display:grid; grid-template-columns:repeat(5, minmax(160px,1fr));
+  gap:1rem; margin-top:1rem;
+}
+.card{
+  background:#fff; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.06);
+  padding:1rem; text-align:center;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover{ transform: translateY(-2px); box-shadow:0 6px 16px rgba(0,0,0,.12) }
+.card svg{
+  width:42px; height:42px; color:var(--blue); display:block; margin:0 auto .5rem;
+}
+.card h3{ margin:.25rem 0 0; font-size:1rem }
+
+/* ADVOGADA */
+.advogada-wrap{
+  display:grid; grid-template-columns:320px 1fr; gap:2rem; align-items:center;
+}
+.foto-advogada{
+  width:100%; max-width:320px; border-radius:10px; display:block;
+  transition:transform .25s ease;
+}
+.foto-advogada:hover{ transform: scale(1.03) }
+.advogada-text h2{ font-family:'Merriweather',serif; margin:0 0 .5rem }
+.social{ display:flex; gap:.75rem; margin-top:.5rem }
+.social a{ color:var(--blue); text-decoration:none; font-weight:700 }
+
+/* FORM */
+.form{
+  display:flex; flex-direction:column; gap:.75rem; max-width:520px;
+}
+.form input,.form textarea{
+  padding:.75rem; border:1px solid #d9d9d9; border-radius:8px;
+}
+.form button{
+  background:var(--blue); color:#fff; border:0; border-radius:8px;
+  padding:.75rem 1rem; font-weight:700;
+}
+
+/* WHATSAPP FAB */
+.whatsapp-fab{
+  position:fixed; right:18px; bottom:18px; background:var(--green); color:#fff;
+  text-decoration:none; padding:.6rem .9rem; border-radius:999px; font-weight:700;
+  box-shadow:0 6px 16px rgba(0,0,0,.15);
+}
+
+/* RESPONSIVO */
+@media (max-width:1024px){
+  .cards{ grid-template-columns:repeat(3, minmax(160px,1fr)) }
+}
+@media (max-width:768px){
+  .hero-grid{ grid-template-columns:1fr; gap:1rem }
+  .two-col{ grid-template-columns:1fr }
+  .advogada-wrap{ grid-template-columns:1fr }
+  .cards{ grid-template-columns:repeat(2, minmax(150px,1fr)) }
+}
+@media (max-width:420px){
+  .cards{ grid-template-columns:1fr }
+}
