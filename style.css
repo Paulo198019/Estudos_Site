@@ -75,14 +75,14 @@ nav a {
   font-weight: 600;
 }
 
-/* Ajuste de ancoragem com sticky nav */
+/* Seções */
 section { padding: 40px 20px; text-align: center; scroll-margin-top: 90px; }
 section h2 { font-size: 1.6rem; margin-bottom: 1rem; }
 
-/* Intro (imagem à esquerda) */
-.intro-grid {
+/* Intro imagem esquerda + texto direita */
+.intro .intro-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr; /* imagem maior à esquerda */
+  grid-template-columns: 1.2fr 1fr;
   gap: 2rem;
   align-items: center;
 }
@@ -91,9 +91,22 @@ section h2 { font-size: 1.6rem; margin-bottom: 1rem; }
   border-radius: 12px;
   box-shadow: 0 8px 24px var(--shadow);
 }
-.intro-text h2 { font-size: 1.6rem; margin-bottom: 0.5rem; }
-.bullets { list-style: disc; text-align: left; margin: 0.5rem auto; max-width: 600px; }
-.bullets li { margin-bottom: 0.25rem; }
+.intro-text .bullets { list-style: disc; text-align: left; margin: .5rem auto; max-width: 600px; }
+.intro-text .bullets li { margin-bottom: .25rem; }
+
+/* BLOCO SOBRE CENTRALIZADO abaixo de Quem Somos */
+.sobre-inline {
+  grid-column: 1 / -1;           /* ocupa as duas colunas do grid */
+  text-align: center;
+  max-width: 900px;
+  margin: 6px auto 0;
+  padding-top: 8px;
+}
+.sobre-inline h3 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+.sobre-inline p { color: #444; }
 
 /* Cards */
 .cards {
@@ -110,18 +123,42 @@ section h2 { font-size: 1.6rem; margin-bottom: 1rem; }
   max-width: 300px;
   padding: 20px;
   opacity: 0;                      /* começa invisível para animação de entrada */
-  transform: translateY(20px);     /* movimento inicial para cima */
+  transform: translateY(20px);     /* movimento inicial */
   transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.6s ease;
   will-change: opacity, transform; /* performance */
 }
-.card img { width: 60px; margin-bottom: 12px; }
 .card h3 { font-size: 1.1rem; margin: 6px 0 8px; }
 .card p { font-size: 0.95rem; color: #555; }
 
-/* Hover: escala + sombra (destaque) */
+/* Ícones dos cards (SVGs inline) */
+.card-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 10px;
+  display: grid;
+  place-items: center;
+}
+.card-icon svg {
+  width: 64px;
+  height: 64px;
+  stroke: var(--primary);  /* usa a cor do tema (#0D1B2A) */
+  fill: none;              /* contorno por padrão */
+}
+
+/* Cores por área (opcional) */
+.card:nth-child(1) .card-icon svg { stroke: #1F4E5F; } /* Família   */
+.card:nth-child(2) .card-icon svg { stroke: #2F80ED; } /* Trabalho  */
+.card:nth-child(3) .card-icon svg { stroke: #27AE60; } /* Previdência */
+.card:nth-child(4) .card-icon svg { stroke: #E67E22; } /* Consumidor */
+.card:nth-child(5) .card-icon svg { stroke: #8E44AD; } /* Empresarial */
+
+/* Hover: elevação + leve escala */
 .card:hover {
   transform: translateY(-4px) scale(1.03);
   box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+.card:hover .card-icon svg {
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
 }
 
 /* Formulário */
@@ -157,7 +194,7 @@ footer { background: #333; color: #fff; text-align: center; padding: 20px; }
 
 /* Responsividade */
 @media (max-width: 1100px) { .cards { grid-template-columns: repeat(3, minmax(240px, 1fr)); } }
-@media (max-width: 768px)  { header h1 { font-size: 1.8rem; } .intro-grid { grid-template-columns: 1fr; } .cards { grid-template-columns: repeat(2, minmax(220px, 1fr)); } }
+@media (max-width: 768px)  { header h1 { font-size: 1.8rem; } .intro .intro-grid { grid-template-columns: 1fr; } .cards { grid-template-columns: repeat(2, minmax(220px, 1fr)); } }
 @media (max-width: 480px)  { .cards { grid-template-columns: 1fr; } }
 
 /* Animações chave */
@@ -167,4 +204,3 @@ footer { background: #333; color: #fff; text-align: center; padding: 20px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { animation: none !important; transition: none !important; }
-}
