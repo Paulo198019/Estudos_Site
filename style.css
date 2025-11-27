@@ -21,8 +21,106 @@ body{font-family:'Open Sans',sans-serif;margin:0;color:var(--text)}
 .section{padding:2.5rem 0}
 .section.gray{background:var(--gray)}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.cards{display:grid;grid-template-columns:repeat(5,minmax(160px,1fr));gap:1rem}
-.card{background:#fff;padding:1rem;border-radius:10px;text-align:center}
-.advogada-wrap{display:grid;grid-template-columns:320px 1fr;gap:2rem}
-.foto-advogada{width:100%;border-radius:10px}
-.whatsapp-fab{position:fixed;bottom:20px;right:20px;background:var(--green);color:#fff;padding:.6rem .9rem;border-radius:999px;text-decoration:none}
+
+/* ====== CARDS ====== */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(5, minmax(180px, 1fr));
+  gap:1rem;
+  margin-top:1rem;
+}
+.card{
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  padding:1.1rem;
+  text-align:center;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.card:hover{ transform:translateY(-2px); box-shadow:0 8px 18px rgba(0,0,0,.12); }
+.card-icon{
+  font-size:28px;
+  line-height:1;
+  margin-bottom:.5rem;
+}
+.card h3{ margin:.25rem 0 .35rem; font-size:1.05rem; }
+.card p{ margin:0; font-size:.95rem; color:#555; }
+
+/* Responsividade dos cards */
+@media (max-width:1024px){
+  .cards{ grid-template-columns:repeat(3, minmax(180px, 1fr)); }
+}
+@media (max-width:768px){
+  .cards{ grid-template-columns:repeat(2, minmax(180px, 1fr)); }
+}
+@media (max-width:480px){
+  .cards{ grid-template-columns:1fr; }
+}
+
+/* ====== ADVOGADA CENTRALIZADA ====== */
+.advogada-center{
+  display:flex;
+  justify-content:center;       /* Centraliza horizontalmente o bloco */
+  align-items:center;           /* Alinha verticalmente (se necessário) */
+}
+.advogada-card{
+  max-width:860px;              /* Largura máxima do card central */
+  width:100%;
+  display:flex;
+  flex-direction:column;        /* Empilha em coluna para centralizar tudo */
+  align-items:center;           /* Centraliza conteúdo na horizontal */
+  gap:1rem;
+  text-align:center;            /* Centraliza textos */
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  padding:1.5rem;
+}
+
+/* Foto com tamanho confortável e responsivo */
+.foto-advogada{
+  width:min(320px, 80%);
+  height:auto;
+  border-radius:10px;
+  display:block;
+  object-fit:cover;
+  transition:transform .25s ease;
+}
+.foto-advogada:hover{ transform:scale(1.03); }
+
+/* Texto e botões */
+.advogada-text h2{
+  font-family:'Merriweather',serif;
+  margin:.25rem 0 .5rem;
+}
+.advogada-text p{ margin:0 0 .75rem; }
+
+.cta.inline{
+  display:inline-block;
+  background:#fff;
+  color:var(--blue-dark);
+  padding:.65rem 1rem;
+  border-radius:8px;
+  border:2px solid var(--blue-dark);
+  text-decoration:none;
+  font-weight:700;
+  transition:background .2s ease, color .2s ease;
+}
+.cta.inline:hover{
+  background:var(--blue-dark);
+  color:#fff;
+}
+
+/* Redes sociais centralizadas com espaçamento */
+.social{
+  display:flex;
+  gap:.75rem;
+  justify-content:center;   /* Centraliza os links */
+  flex-wrap:wrap;
+  margin-top:.5rem;
+}
+.social a{
+  color:var(--blue);
+  text-decoration:none;
+  font-weight:700;
+}
