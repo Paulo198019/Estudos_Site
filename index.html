@@ -8,15 +8,7 @@
   <title>Débora Kulczar Advocacia</title>
 
   <!-- Tipografias -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wdisplay=swap
-
-  <!-- Estilos -->
-  style.css
-</head>
-<body>
-  <!-- Banner -->
-  <header id="topo">
-    <h1 id="bannerTitle">Excelência em Advocacia e Consultoria Jurídica</h1>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600ica</h1>  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600p
     <p id="bannerSubtitle">
       Atuação em Direito de Família - Direito do Trabalho - Direito Previdenciário - Direito do Consumidor - Direito Cível - defendendo seus direitos com ética, competência e compromisso. Soluções jurídicas personalizadas para pessoas físicas e empresas.
     </p>
@@ -30,12 +22,13 @@
     #contatoContato</a>
   </nav>
 
-  <!-- Intro com imagem de escritório à esquerda -->
+  <!-- Intro com imagem à esquerda, texto à direita e bloco 'Sobre' centralizado abaixo -->
   <section id="quem-somos" class="intro">
     <div class="intro-grid">
       <figure class="intro-image">
-        <!-- Use a imagem que você enviou (suba o arquivo escritorio.jpg no repositório) -->
-        <img src="escritorio.jpg" alt="Escritório moderno e clean" loadingativo moderno, iluminação natural e mesa de trabalho.</figcaption>
+        <!-- Suba este arquivo junto ao index.html -->
+        escritorio.jpg
+        <figcaption class="sr-only">Ambiente corporativo moderno, iluminação natural e mesa de trabalho.</figcaption>
       </figure>
 
       <div class="intro-text">
@@ -47,36 +40,87 @@
           <li>Experiência em demandas complexas e consultoria preventiva.</li>
         </ul>
       </div>
+
+      <!-- BLOCO SOBRE CENTRALIZADO ENTRE IMAGEM E TEXTO -->
+      <div id="sobre" class="sobre-inline" aria-labelledby="sobre-inline-title">
+        <h3 id="sobre-inline-title">Sobre</h3>
+        <p>
+          Débora Kulczar Advocacia nasceu com o propósito de oferecer soluções jurídicas de excelência, sempre pautadas pela ética, transparência e compromisso com resultados. Nossa equipe multidisciplinar atua em diversas áreas do Direito, desenvolvendo estratégias personalizadas para atender às necessidades específicas de cada cliente — seja pessoa física ou jurídica. Mais do que assessoria, entregamos confiança, segurança e inovação na condução de cada caso.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- Cards de áreas de atuação -->
+  <!-- Cards com ícones SVG inline -->
   <section id="areas" aria-label="Áreas de atuação">
     <h2>Áreas de Atuação</h2>
+
     <div class="cards">
+      <!-- Família -->
       <article class="card" aria-labelledby="card-familia-title">
-        <img src="https://cdn-icons-png.flaticon.com/512/1048ng
+        <div class="card-icon" aria-hidden="true">
+          <!-- Ícone Família (SVG) -->
+          <svg viewBox="0 0 64 64" role="img" focusable="false">
+            <circle cx="20" cy="22" r="6"></circle>
+            <circle cx="44" cy="22" r="6"></circle>
+            <path d="M10,50c0-8,6-14,14-14h6c8,0,14,6,14,14" fill="none" stroke-width="3"></path>
+          </svg>
+        </div>
         <h3 id="card-familia-title">Direito de Família</h3>
         <p>Proteção e orientação em questões familiares.</p>
       </article>
 
+      <!-- Trabalho -->
       <article class="card" aria-labelledby="card-trabalho-title">
-        <img srccdn-icons-png.flaticon.com/512/1048/1048953.png
+        <div class="card-icon" aria-hidden="true">
+          <!-- Ícone Trabalho (maleta) -->
+          <svg viewBox="0 0 64 64" role="img" focusable="false">
+            <rect x="10" y="22" width="44" height="26" rx="4"></rect>
+            <rect x="24" y="14" width="16" height="8" rx="2"></rect>
+            <path d="M10 32h44" stroke-width="3" fill="none"></path>
+          </svg>
+        </div>
         <h3 id="card-trabalho-title">Direito do Trabalho</h3>
         <p>Defesa dos seus direitos trabalhistas.</p>
       </article>
 
+      <!-- Previdência -->
       <article class="card" aria-labelledby="card-previdenciario-title">
-        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png" alt="Ícone previdenciário" loading="lazy" width="60" height="       <p>Aposentadoria e benefícios do INSS.</p>
+        <div class="card-icon" aria-hidden="true">
+          <!-- Ícone Previdência (escudo/seguro) -->
+          <svg viewBox="0 0 64 64" role="img" focusable="false">
+            <path d="M32 8l20 8v14c0 12-9 20-20 24C21 50 12 42 12 30V16l20-8z" stroke-width="3" fill="none"></path>
+            <path d="M24 32l6 6 10-10" stroke-width="3" fill="none"></path>
+          </svg>
+        </div>
+        <h3 id="card-previdenciario-title">Direito Previdenciário</h3>
+        <p>Aposentadoria e benefícios do INSS.</p>
       </article>
 
+      <!-- Consumidor -->
       <article class="card" aria-labelledby="card-consumidor-title">
-        <img src="https://cdn-icons-png.flaticon.com/512/1060/1060738.png"3 id="card-consumidor-title">Direito do Consumidor</h3>
+        <div class="card-icon" aria-hidden="true">
+          <!-- Ícone Consumidor (carrinho simples) -->
+          <svg viewBox="0 0 64 64" role="img" focusable="false">
+            <circle cx="24" cy="52" r="3"></circle>
+            <circle cx="44" cy="52" r="3"></circle>
+            <path d="M12 16h8l4 22h22l4-16H22" stroke-width="3" fill="none"></path>
+          </svg>
+        </div>
+        <h3 id="card-consumidor-title">Direito do Consumidor</h3>
         <p>Proteção contra práticas abusivas e defesa dos seus direitos.</p>
       </article>
 
+      <!-- Empresarial -->
       <article class="card" aria-labelledby="card-empresarial-title">
-        https://cdn-icons-png.flaticon.com/512/3126/3126647.png
+        <div class="card-icon" aria-hidden="true">
+          <!-- Ícone Empresarial (prédio) -->
+          <svg viewBox="0 0 64 64" role="img" focusable="false">
+            <rect x="18" y="12" width="20" height="40" rx="2"></rect>
+            <rect x="40" y="24" width="8" height="28" rx="2"></rect>
+            <path d="M22 18h8M22 26h8M22 34h8M22 42h8" stroke-width="2" fill="none"></path>
+          </svg>
+        </div>
         <h3 id="card-empresarial-title">Direito Empresarial</h3>
         <p>Consultoria preventiva, contratos e soluções jurídicas para empresas.</p>
       </article>
@@ -88,7 +132,7 @@
     <h2>Contato</h2>
     <p>Telefone: (11) 99999-9999 | Email: contato@adv.com</p>
     <p>
-      https://wa.me/5511999999999WhatsApp</a> |
+      <a href="https://wa.me/5519WhatsApp</a> |
       https://goo.gl/maps/XxXxXGoogle Maps</a>
     </p>
 
@@ -121,3 +165,9 @@
   script.js</script>
 </body>
 </html>
+  <!-- Estilos -->
+  style.css
+</head>
+<body>
+  <!-- Banner -->
+  <header id="topo">
