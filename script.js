@@ -3,7 +3,8 @@
 document.querySelectorAll('nav a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
-   ById(targetId);    const targetId = link.getAttribute('href').substring(1);
+    const targetId = link.getAttribute('href').substring(1);
+    const targetEl = document.getElementById(targetId);
     if (targetEl) {
       targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -20,4 +21,3 @@ window.addEventListener('DOMContentLoaded', () => {
     }, index * 250);
   });
 });
-
