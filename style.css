@@ -1,33 +1,90 @@
 
-/* Reset básico */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: #222; background: #fff; }
+:root {
+  --brand: #0f4c81;         /* Azul do escritório */
+  --text-on-dark: #ffffff;  /* Texto em overlay */
+  --muted: #e6ecf1;         /* Texto secundário */
+  --primary: #f5a623;       /* Amarelo do botão primário */
+  --primary-hover: #e69510;
+  --outline: #ffffff;       /* Contorno do botão secundário */
+}
 
-/* Header */
-.topbar { background: #0f4c81; color: #fff; padding: 16px; text-align: center; }
-.menu { margin-top: 12px; }
-.menu a { color: #fff; margin: 0 12px; text-decoration: none; font-weight: 600; }
-.menu a:hover { text-decoration: underline; }
+/* ===== HERO / BANNER ===== */
+.hero {
+  position: relative;
+  height: 650px; /* altura fixa solicitada */
+  background: #000 url("./design-banner.jpg") center/cover no-repeat;
+}
 
-/* Banner */
-.banner { width: 100%; max-height: 280px; object-fit: cover; display: block; }
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* overlay escuro com leve gradiente, semelhante ao Figma */
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(15, 76, 129, 0.55) 50%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+}
 
-/* Conteúdo principal */
-main { max-width: 1080px; margin: 24px auto; padding: 0 16px; }
-h1, h2 { margin-bottom: 12px; color: #0f4c81; }
-p { margin-bottom: 16px; line-height: 1.6; }
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1080px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  color: var(--text-on-dark);
 
-/* Imagem destaque */
-.hero-img { width: 100%; border-radius: 12px; margin-top: 12px; }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-/* Grid de áreas */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; list-style: none; margin-top: 16px; }
-.grid li { background: #f5f7fa; padding: 12px; border: 1px solid #e6ecf1; border-radius: 8px; text-align: center; font-weight: 500; }
+/* Títulos e texto do hero */
+.hero h1 {
+  font-size: clamp(28px, 4.2vw, 54px);
+  line-height: 1.15;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
 
-/* Footer */
-footer { border-top: 1px solid #e6ecf1; margin-top: 32px; padding: 16px; text-align: center; color: #666; font-size: 14px; }
+.hero-lead {
+  font-size: clamp(14px, 1.6vw, 18px);
+  color: var(--muted);
+  max-width: 900px;
+  margin: 8px 0 24px;
+}
 
-/* Responsividade */
-@media (max-width: 600px) {
-  .menu a { display: inline-block; margin: 8px; }
+/* CTAs */
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #1e1e1e;
+  border: 1px solid rgba(0,0,0,0.15);
+}
+.btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-on-dark);
+  border: 2px solid var(--outline);
+}
+.btn-outline:hover { background: rgba(255,255,255,0.08); transform: translateY(-1px); }
+
+/* Responsivo: reduz margens/tamanhos em telas menores */
+@media (max-width: 768px) {
+  .hero { height: 520px; }  /* opcional: ajuste para celular */
 }
